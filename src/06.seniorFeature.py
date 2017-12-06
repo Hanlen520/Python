@@ -1,5 +1,6 @@
 #!/usr/bin/evn python
 # 六.高级特性
+from collections import Iterable
 
 
 def odd_list():
@@ -48,4 +49,26 @@ print('ABCDEFG'[::2])
 #     return string
 # section_list(" Hello ")
 
+
+# ===================================================================================================================
+# 6.2.迭代
+iteration_list = {'A': 65, 'B': 66, 'C': 67, 'D': 68}
+for key in iteration_list:
+    print("iteration_list的key为：", key)
+
+
+# 判断对象是否可迭代，通过collections模块的Iterable类型判断
+# from collections import Iterable
+print("判断'abc'是否可迭代：", isinstance('abc', Iterable))
+print("判断[1, 2, 3]是否可迭代：", isinstance([1, 2, 3], Iterable))
+print("判断123是否可迭代：", isinstance(123, Iterable))
+
+
+# 实现list的下标循环
+for i, value in enumerate(iteration_list):
+    print(i, value)
+
+
+# ===================================================================================================================
+# 6.3.列表生成式
 
