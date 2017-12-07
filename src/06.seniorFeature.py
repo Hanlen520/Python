@@ -93,7 +93,7 @@ print("两层循环生成全排列：", [m + n for m in 'ABC' for n in 'XYZ'])
 print("目录下的所有文件和目录名：", [d for d in os.listdir('.')])
 
 
-#列表式生成list
+# 列表式生成list
 # d = {'X': 'A', 'Y': 'B', 'Z': 'C'}
 # for k, v in d.iteritems():
 #     print (k, '=', v)
@@ -113,12 +113,13 @@ for ng in g:
 
 
 # 斐波拉切数列
-def fab(max):
-    n, a, b = 0, 0, 1
-    while n < max:
+def fab(max_name):
+    n_item, a, b = 0, 0, 1
+    while n_item < max_name:
         # print(b)
         yield b
         a, b = b, a + b
-        n = n + 1
+        n_item = n_item + 1
+
 
 print(fab(6))
