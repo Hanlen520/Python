@@ -89,3 +89,44 @@ run_twice(Dog())
 # ======================================================================================================================
 # 9.4.获取对象信息
 # 9.4.1.使用type()
+print(type('str'))
+print(type(123))
+print(type(abs))
+print(type(Animal))
+
+
+# 9.4.2.使用isinstance()--一个对象是否是某种类型
+print(isinstance(instance_people, Student))
+
+
+# 9.4.3.使用dir()--获得一个对象的所有属性和方法
+print(dir('ABC'))
+
+
+# getattr()
+# setattr()
+# hasattr()
+class MyObject(object):
+    def __init__(self):
+        self.x = 9
+
+    def power(self):
+        return self.x * self.x
+
+
+obj = MyObject()
+# 这个对象有没有这个属性
+print(hasattr(obj, 'x'))
+print(obj.x)
+# 设置一个属性
+setattr(obj, 'y', 19)
+# 获取这个属性
+getattr(obj, 'y')
+print(obj.y)
+
+
+# ======================================================================================================================
+# 实例属性和类属性
+
+
+
