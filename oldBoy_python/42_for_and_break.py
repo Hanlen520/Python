@@ -32,8 +32,10 @@ _passWord = "159357"
 #     print("要不要小流氓,还想盗取我的账号?")
 
 # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-counter = 0
-while counter < 3:
+
+# 定义一个标志位计数
+number = 0
+while number < 3:
     userName = input("Please input your name: ")
     passWord = input("Please input your password: ")
 
@@ -41,12 +43,12 @@ while counter < 3:
         print("Hello %s, welcome to your home page." % _userName)
         break
     else:
-        print("Invalid userName or passWord!")
-    counter += 1
-    if counter == 3:
-        keep_going_choice = input("还想玩么?[y/n]")
-        if keep_going_choice == "y":
-            counter = 0
+        print("userName or passWord is wrong, please check!")
+    number += 1
+    if number == 3:
+        continue_choice = input("Do you want to continue?[y/n]")
+        if continue_choice == "y":
+            number = 0
 
 else:
     print("要不要脸小流氓,还想盗取我的账号?")

@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 # by author: Crisimple
 # description:
+"""
+    可依次选择进入各子菜单
+    可从任意一层往回退到上一层
+    可从任意一层退出程序
+    所需新知识点：列表、字典
+"""
 
 menu = {
     '北京':{
@@ -13,7 +19,7 @@ menu = {
             '中关村':{
                 '爱奇艺':{},
                 '汽车之家':{},
-                '优酷':{},
+                'youKu':{},
             },
             '上地':{
                 '百度':{},
@@ -37,7 +43,7 @@ menu = {
             }
         },
         '闸北':{
-            '火车站':{
+            '火车战':{
                 '携程':{}
             }
         },
@@ -46,43 +52,29 @@ menu = {
     '山东':{},
 }
 
-
-
-exit_flag = False
-current_layer = menu
+# 将地区的字典复制给choice_layer
+choice_layer = menu
+flag = False
 layers = [menu]
 
-while not exit_flag:
-
-    for i in current_layer:
+while not flag:
+    for i in choice_layer:
         print("YOUR ADDRESS MUST TO CHOICE:".center(50, "-"),i)
 
     address_choice = input("PLEASE CHOICE YOUR ADDRESS>>>>>>>:").strip()
 
     if address_choice == "b":
         print("ATTENTION: <<<<<<<<<<<<<<-YOU HAVE GOT GO BACK NOW.")
-        current_layer = layers[-1]
+        choice_layer = layers[-1]
         layers.pop()
-    elif address_choice not in current_layer: continue
+    elif address_choice not in choice_layer: continue
     else:
-        layers.append(current_layer)
-        current_layer = current_layer[address_choice]
+        layers.append(choice_layer)
+        choice_layer = choice_layer[address_choice]
 
     if address_choice == "b":
         print("ATTENTION: <<<<<<<<<<<<<<-YOU HAVE GOT GO BACK NOW.")
         choice_layer = layers[-1]
         layers.pop()
-
-
-
-
-
-
-
-
-
-
-
-
 
 
