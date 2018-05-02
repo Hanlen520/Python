@@ -107,6 +107,11 @@ print(int('12345'))
 print(int('12345', base=8))
 print(int('12345', base=16))
 
+print("04. 偏函数")
+# functools.partial的作用就是，把一个函数的某些参数给固定住（也就是‎设置默认‎值），返回一个新的函数，调用这个新函数会更简单。
+int2 = functools.partial(int, base=2)
+print(int2('10'))
+
 
 # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 def int_two(int_item, base=2):
