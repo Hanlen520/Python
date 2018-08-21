@@ -9,7 +9,7 @@ from time import sleep
 # ======================= WebDriver驱动浏览器基本操作 ====================================
 
 # 驱动Edge浏览器
-browsers = webdriver.Edge('./tools/chromedriver.exe')
+browsers = webdriver.Edge('./tools/MicrosoftWebDriver.exe')
 
 first_url = 'http://www.baidu.com'
 browsers.get(first_url)
